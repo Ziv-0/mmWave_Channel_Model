@@ -1,4 +1,4 @@
-function Hout =Covert_Htime2Hfrq(Ht,f0,tsample)
+function Hout =Covert_Htime2Hfrq(Ht,f0,tsample,ifnorm)
 % 在窄带条件下
 % 将时域形式的信道状态转化为某频点f0处的信道矩阵
 % 由线性时不变系统的性质可知，即为时域信号在f0处的傅里叶变换
@@ -16,6 +16,9 @@ for ith_Nr = 1:Nr
         end
         Hout(ith_Nr,jth_Nt) = h;
     end
+end
+if ifnorm
+    Hout = Hout/norm(Hout);
 end
 end
 
