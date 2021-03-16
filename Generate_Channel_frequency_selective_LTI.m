@@ -61,7 +61,7 @@ d_array=lambda/2; % distance between elements of planar array( we consider half-
 k=2*pi/lambda; % wavenumber
 kd=k*d_array;
 
-% standard deviations of Laplacian distribution ( we consider 5°) 
+% standard deviations of Laplacian distribution ( we consider 5°) //
 dev_standard_phit=5/180*pi;
 dev_standard_thetat=5/180*pi;
 dev_standard_phir=5/180*pi;
@@ -188,7 +188,8 @@ H_temp=zeros(Nr,Nt,PP);
 %% Consideration of LOS path as in equation (1) in the article listed above
 u=rand;    
 if u<=P_LOS
-    psi=rand*2*pi; % uniform random variable in [0,2*pi]
+    psi=rand*2*pi
+   % uniform random variable in [0,2*pi]
     alpha_LOS=exp(1j*psi);
     attenuation_LOS=Evaluation_Path_loss(d,f,scenario,1);
     theta_t_LOS=theta_r;
